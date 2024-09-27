@@ -5,6 +5,7 @@ import BoardSquare from "./components/common/BoardSquare";
 import StartIcon from "./components/icon/StartIcon";
 import XIcon from "./components/icon/XIcon";
 import { useNavigate } from "react-router";
+import GameTitle from "./components/common/GameTitle";
 
 const App = () => {
     const [openNewGameModal, setOpenNewGameModal] = useState(false);
@@ -35,11 +36,7 @@ const App = () => {
             />
             <div className="min-h-screen p-1 bg-[#131515] flex justify-center items-center">
                 <div className="min-w-[300px] max-w-[400px] w-full space-y-5">
-                    <h1 className="sriracha-regular text-white text-[5rem] text-center">
-                        <span className="text-green-300">Tic</span>{" "}
-                        <span className="text-yellow-300">Tac</span>{" "}
-                        <span className="text-red-500">Toe</span>
-                    </h1>
+                    <GameTitle/>
                     <div className=" grid grid-cols-3 gap-3">
                         <BoardSquare>
                             <StartIcon />

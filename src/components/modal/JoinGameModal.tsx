@@ -38,7 +38,7 @@ const JoinGameModal = ({
                 onClick={(e) => {
                     e.stopPropagation();
                 }}
-                className="border-[0.1rem] border-yellow-300 border-white min-w-[300px] max-w-[400px] w-full px-10 py-5 rounded-lg space-y-3"
+                className="border-[0.1rem] border-yellow-300min-w-[300px] max-w-[400px] w-full px-10 py-5 rounded-lg space-y-3"
             >
                 <div>
                     <label

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { socket } from "../socket";
+import GameTitle from "../components/common/GameTitle";
 
 const GameRoom = () => {
     const [isConnected, setIsConnected] = useState(socket.connected);
@@ -31,11 +32,7 @@ const GameRoom = () => {
     return isConnected || true ? (
         <div className="min-h-screen p-1 bg-[#131515] flex justify-center items-center">
             <div className="min-w-[300px] max-w-[400px] w-full space-y-5">
-                <h1 className="sriracha-regular text-white text-[5rem] text-center">
-                    <span className="text-green-300">Tic</span>{" "}
-                    <span className="text-yellow-300">Tac</span>{" "}
-                    <span className="text-red-500">Toe</span>
-                </h1>
+                <GameTitle/>
                 <div className="flex gap-5  justify-center items-center">
                     <div className="text-center flex-1 text-white rounded-md py-3 border border-green-300">
                         Player One : 0
