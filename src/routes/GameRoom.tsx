@@ -2,17 +2,9 @@ import { useEffect, useState } from "react";
 import { socket } from "../socket";
 
 const GameRoom = () => {
-    const [session, setSession] = useState(() =>
-        JSON.parse(window.localStorage.getItem("session") as string)
-    );
-
-    const [board, setBoard] = useState(null);
-
     const [isConnected, setIsConnected] = useState(socket.connected);
 
     useEffect(() => {
-        socket.auth = session;
-
         function onConnect() {
             setIsConnected(true);
         }
@@ -21,8 +13,7 @@ const GameRoom = () => {
             setIsConnected(false);
         }
 
-        function onPlay(game: any) {
-            setBoard(game);
+        function onPlay() {
         }
 
         socket.on("connect", onConnect);
