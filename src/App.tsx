@@ -69,14 +69,19 @@ const App = () => {
                             }}
                             className="rounded-md border border-yellow-300 px-10 py-3 text-white"
                         >
-                            Join Game
+                            Join Online
                         </button>
                     </div>
-                    <div className="flex justify-center">
+                    <div className="flex gap-5 justify-center">
                         <button onClick={()=>{
                             navigate('/offline-mode')
-                        }} className="rounded-md border-red-400 border px-10 py-3 text-white">
+                        }} className="rounded-md border-red-400 border px-10 py-2 text-md text-white">
                             Offline
+                        </button>
+                        <button onClick={()=>{
+                            navigate('/ai-mode')
+                        }} className="rounded-md border-blue-400 border px-10 py-2 text-md text-white">
+                            AI Player
                         </button>
                     </div>
                 </div>

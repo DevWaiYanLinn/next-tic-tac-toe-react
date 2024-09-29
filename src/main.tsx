@@ -5,6 +5,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import GameRoom from "./routes/GameRoom.tsx";
 import OfflineMode from "./routes/OfflineMode.tsx";
+import AIMode from "./routes/AIMode.tsx";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
     {
         path: '/offline-mode',
         element : <OfflineMode/>
+    },
+    {
+        path : '/ai-mode',
+        element : <AIMode/>
     }
 ]);
 
