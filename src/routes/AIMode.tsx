@@ -37,7 +37,7 @@ const winPatterns = [
     [
         [6, 7, 8],
         [0, 3, 6],
-        [0, 4, 8],
+        [6, 4, 2],
     ],
     [
         [6, 7, 8],
@@ -99,6 +99,7 @@ const AIMode = () => {
             }
 
             const isWin = win(newBoard.squares as any, 1, aiChoice);
+            console.log(newBoard.squares,aiChoice)
 
             if (isWin) {
                 newBoard.win = true;
