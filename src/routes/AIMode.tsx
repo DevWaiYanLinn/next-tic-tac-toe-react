@@ -73,6 +73,9 @@ const AIMode = () => {
 
     const handleClick = (index: number) => {
         const newBoard = { ...board };
+        if (newBoard.squares[index] !== null) {
+            return;
+        }
         newBoard.squares[index] = newBoard.player;
         newBoard.record.player.push(index);
 
@@ -99,7 +102,6 @@ const AIMode = () => {
             }
 
             const isWin = win(newBoard.squares as any, 1, aiChoice);
-            console.log(newBoard.squares,aiChoice)
 
             if (isWin) {
                 newBoard.win = true;
@@ -193,12 +195,13 @@ const AIMode = () => {
             <Toaster
                 toastOptions={{
                     className: "bg-green-400",
-                    duration:2000,
-                    style:{
-                        backgroundColor:'rgb(49 196 141 / var(--tw-bg-opacity))',
-                        color:'white'
+                    duration: 2000,
+                    style: {
+                        backgroundColor:
+                            "rgb(49 196 141 / var(--tw-bg-opacity))",
+                        color: "white",
                     },
-                    icon:"🎉"
+                    icon: "🎉",
                 }}
             />
             <div className="min-h-screen  bg-[#131515] flex justify-center items-center">
@@ -231,7 +234,7 @@ const AIMode = () => {
                         })}
                     </div>
                     <div
-                        style={{visibility:board.win ? 'visible' : 'hidden'}}
+                        style={{ visibility: board.win ? "visible" : "hidden" }}
                         className=" flex justify-center"
                         onClick={handleRestart}
                     >
